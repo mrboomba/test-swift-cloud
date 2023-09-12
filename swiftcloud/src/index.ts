@@ -7,7 +7,7 @@ import cors from "cors";
 
 const app = express();
 app.use(cors({
-  origin: 'http://localhost:3000', // Replace with your frontend's URL
+  origin: ['http://localhost', '157.245.203.195'], 
 }))
 app.use(express.json());
 

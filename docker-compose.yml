@@ -1,5 +1,14 @@
 version: '3.8'
 services:
+  react-app:
+    build:
+      context: ./awesome-fe
+      dockerfile: Dockerfile
+    ports:
+      - "80:80" # Map container port 80 to host port 80
+    depends_on:
+      - swiftcloud
+
   swiftcloud:
     build:
       context: ./swiftcloud
