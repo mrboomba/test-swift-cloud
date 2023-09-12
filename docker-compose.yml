@@ -4,7 +4,7 @@ services:
     build:
       context: ./swiftcloud
     ports:
-      - "3000:3000"
+      - "4000:4000"
     volumes:
       - ./swiftcloud/:/app
     depends_on:
@@ -26,6 +26,7 @@ services:
       - "3306:3306"
     volumes:
       - mysql-data:/var/lib/mysql
+      - ./init_sql:/docker-entrypoint-initdb.d
 
 volumes:
   mysql-data:

@@ -43,6 +43,7 @@ const SongWhereInput = new GraphQLInputObjectType({
     fields: {
         Song: { type: GraphQLString },
         Album: { type: GraphQLString },
+        Year: { type: GraphQLInt },
     }
 })
 export const schema = new GraphQLSchema({
@@ -72,6 +73,11 @@ export const schema = new GraphQLSchema({
                                         {
                                             Album: {
                                                 contains: where.Album,
+                                            },
+                                        },
+                                        {
+                                            Year: {
+                                                equals: where.Year
                                             },
                                         },
                                     ],
