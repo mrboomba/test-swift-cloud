@@ -1,0 +1,31 @@
+version: '3.8'
+services:
+  swiftcloud:
+    build:
+      context: ./swiftcloud
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./swiftcloud/:/app
+    depends_on:
+      - mysql-db
+    restart: on-failure:10
+    
+
+  # MySQL Database
+  mysql-db:
+    platform: linux/x86_64
+    image: mysql:5.7
+    container_name: mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD: l;ylfu=k;F]d
+      MYSQL_DATABASE: song
+      MYSQL_USER: sqluser
+      MYSQL_PASSWORD: lkpohelkp],
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  mysql-data:
