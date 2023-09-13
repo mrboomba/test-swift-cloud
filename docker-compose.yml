@@ -14,8 +14,6 @@ services:
       context: ./swiftcloud
     ports:
       - "4000:4000"
-    volumes:
-      - ./swiftcloud/:/app
     depends_on:
       - mysql-db
     restart: on-failure:10
