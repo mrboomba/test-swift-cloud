@@ -7,7 +7,7 @@ import cors from "cors";
 
 const app = express();
 // Allow requests from your React app's domain
-const allowedOrigins = ['http://157.245.203.195'];
+const allowedOrigins = ['http://157.245.203.195', 'http://localhost'];
 app.use(cors({
   origin: allowedOrigins,
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',

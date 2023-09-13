@@ -8,15 +8,20 @@ services:
       - "80:80" # Map container port 80 to host port 80
     depends_on:
       - swiftcloud
+    networks:
+      - my-network
 
   swiftcloud:
     build:
       context: ./swiftcloud
+    container_name: swiftcloud-node
     ports:
       - "4000:4000"
     depends_on:
       - mysql-db
     restart: on-failure:10
+    networks:
+      - my-network
     
 
   # MySQL Database
@@ -34,6 +39,11 @@ services:
     volumes:
       - mysql-data:/var/lib/mysql
       - ./init_sql:/docker-entrypoint-initdb.d
+    networks:
+      - my-network
 
 volumes:
   mysql-data:
+
+networks:
+  my-network:
