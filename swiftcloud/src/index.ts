@@ -6,9 +6,13 @@ import { schema } from "./schema";
 import cors from "cors";
 
 const app = express();
+// Allow requests from your React app's domain
+const allowedOrigins = ['http://157.245.203.195'];
 app.use(cors({
-  origin: ['http://157.245.203.195/'], 
-}))
+  origin: allowedOrigins,
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+}));
 app.use(express.json());
 
 // instance of prisma client
