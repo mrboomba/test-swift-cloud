@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { useGetSongsQuery } from '../../generated/graphql';
-import Songs from './Songs';
+import * as React from "react";
+import { useGetSongsQuery } from "../../generated/graphql";
+import Songs from "./Songs";
 
 const SongsContainer = () => {
   const { data, error, loading } = useGetSongsQuery();

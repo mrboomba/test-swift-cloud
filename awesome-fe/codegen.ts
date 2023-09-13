@@ -1,5 +1,4 @@
-
-import type { CodegenConfig } from '@graphql-codegen/cli';
+import type { CodegenConfig } from "@graphql-codegen/cli";
 
 const config: CodegenConfig = {
   overwrite: true,
@@ -8,14 +7,16 @@ const config: CodegenConfig = {
   generates: {
     "src/generated/": {
       preset: "client",
-      plugins: ['typescript',
-        'typescript-operations',
-        'typescript-react-apollo'],
+      plugins: [
+        "typescript",
+        "typescript-operations",
+        "typescript-react-apollo",
+      ],
       config: {
-        withHooks: true
-      }
-    }
-  }
+        withHooks: true,
+      },
+    },
+  },
 };
 
 export default config;

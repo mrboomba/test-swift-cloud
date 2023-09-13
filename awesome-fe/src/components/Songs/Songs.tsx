@@ -1,12 +1,12 @@
-import * as React from 'react';
-import { GetSongsQuery } from '../../generated/graphql';
-import './styles.css';
+import * as React from "react";
+import { GetSongsQuery } from "../../generated/graphql";
+import "./styles.css";
 
 interface Props {
   data: GetSongsQuery;
 }
 
-const className = 'Songs';
+const className = "Songs";
 
 const Songs: React.FC<Props> = ({ data }) => (
   <div className={className}>
