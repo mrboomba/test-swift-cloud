@@ -1,5 +1,4 @@
-import express, { Request, Response } from "express";
-import { PrismaClient } from "@prisma/client";
+import express from "express";
 import { createHandler } from "graphql-http/lib/use/express";
 import expressPlayground from "graphql-playground-middleware-express"
 import { schema } from "./schema";
@@ -15,8 +14,6 @@ app.use(cors({
 }));
 app.use(express.json());
 
-// instance of prisma client
-const prisma = new PrismaClient()
 
 app.all(
   "/graphql",
@@ -27,13 +24,6 @@ app.all(
 
 app.get('/playground', expressPlayground({endpoint: '/graphql'}))
 
-// middlewares
-
-app.get("/", async (req: Request, res: Response) => {
-  const songs = await prisma.song.findMany();
-
-  return res.status(200).json({ success: true, songs });
-});
 const port = process.env.PORT ? process.env.PORT: 4000
 app.listen( port, () => {
   console.log(`Listening to ${port}`);
