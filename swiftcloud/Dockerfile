@@ -20,9 +20,10 @@ RUN npm run build
 # Generate Prisma client
 RUN npx prisma generate
 
+
 # Production-ready image
 FROM node:14-slim
-
+RUN apt-get update -y && apt-get install -y openssl
 # Set the working directory in the container
 WORKDIR /app
 
