@@ -5,7 +5,7 @@ import './index.css';
 import App from './App';
 
 const client = new ApolloClient({
-  uri: 'http://swiftcloud-node:4000/graphql',
+  uri: 'http://157.245.203.195/:4000/graphql',
   cache: new InMemoryCache(),
 });
 
