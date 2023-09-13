@@ -13,9 +13,9 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel or swc plugin for production.
  */
 const documents = {
-    "\n  query getSongsWithFilter($where: SongWhereInput!) {\n    getsongs(where: $where) {\n      Song\n      Year\n      Album\n    }\n  }\n": types.GetSongsWithFilterDocument,
-    "\n  query getPopularSongs($orderBy: SongOrderByInput! $skip: Int $take: Int) {\n    getsongs(orderBy: $orderBy,skip: $skip,take:$take) {\n      Song\n      Year\n      Album\n      PlaysJune\n      PlaysJuly\n      PlaysAugust\n    }\n  }\n": types.GetPopularSongsDocument,
-    "\n  query getSongs {\n    getsongs {\n      Song\n      Year\n      Album\n    }\n  }\n": types.GetSongsDocument,
+    "\n  query getSongsWithFilter($where: SongWhereInput!) {\n    getSongs(where: $where) {\n      Song\n      Year\n      Album\n    }\n  }\n": types.GetSongsWithFilterDocument,
+    "\n  query getPopularSongs($orderBy: SongOrderByInput! $skip: Int $take: Int) {\n    getSongs(orderBy: $orderBy,skip: $skip,take:$take) {\n      Song\n      Year\n      Album\n      PlaysJune\n      PlaysJuly\n      PlaysAugust\n    }\n  }\n": types.GetPopularSongsDocument,
+    "\n  query getSongs {\n    getSongs {\n      Song\n      Year\n      Album\n    }\n  }\n": types.GetSongsDocument,
 };
 
 /**
@@ -35,15 +35,15 @@ export function graphql(source: string): unknown;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n  query getSongsWithFilter($where: SongWhereInput!) {\n    getsongs(where: $where) {\n      Song\n      Year\n      Album\n    }\n  }\n"): (typeof documents)["\n  query getSongsWithFilter($where: SongWhereInput!) {\n    getsongs(where: $where) {\n      Song\n      Year\n      Album\n    }\n  }\n"];
+export function graphql(source: "\n  query getSongsWithFilter($where: SongWhereInput!) {\n    getSongs(where: $where) {\n      Song\n      Year\n      Album\n    }\n  }\n"): (typeof documents)["\n  query getSongsWithFilter($where: SongWhereInput!) {\n    getSongs(where: $where) {\n      Song\n      Year\n      Album\n    }\n  }\n"];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n  query getPopularSongs($orderBy: SongOrderByInput! $skip: Int $take: Int) {\n    getsongs(orderBy: $orderBy,skip: $skip,take:$take) {\n      Song\n      Year\n      Album\n      PlaysJune\n      PlaysJuly\n      PlaysAugust\n    }\n  }\n"): (typeof documents)["\n  query getPopularSongs($orderBy: SongOrderByInput! $skip: Int $take: Int) {\n    getsongs(orderBy: $orderBy,skip: $skip,take:$take) {\n      Song\n      Year\n      Album\n      PlaysJune\n      PlaysJuly\n      PlaysAugust\n    }\n  }\n"];
+export function graphql(source: "\n  query getPopularSongs($orderBy: SongOrderByInput! $skip: Int $take: Int) {\n    getSongs(orderBy: $orderBy,skip: $skip,take:$take) {\n      Song\n      Year\n      Album\n      PlaysJune\n      PlaysJuly\n      PlaysAugust\n    }\n  }\n"): (typeof documents)["\n  query getPopularSongs($orderBy: SongOrderByInput! $skip: Int $take: Int) {\n    getSongs(orderBy: $orderBy,skip: $skip,take:$take) {\n      Song\n      Year\n      Album\n      PlaysJune\n      PlaysJuly\n      PlaysAugust\n    }\n  }\n"];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n  query getSongs {\n    getsongs {\n      Song\n      Year\n      Album\n    }\n  }\n"): (typeof documents)["\n  query getSongs {\n    getsongs {\n      Song\n      Year\n      Album\n    }\n  }\n"];
+export function graphql(source: "\n  query getSongs {\n    getSongs {\n      Song\n      Year\n      Album\n    }\n  }\n"): (typeof documents)["\n  query getSongs {\n    getSongs {\n      Song\n      Year\n      Album\n    }\n  }\n"];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};

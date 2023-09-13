@@ -13,8 +13,8 @@ const Popular: React.FC<Props> = ({ data, month }) => (
   <div className={className}>
     <h3>{month}</h3>
     <ol className={`${className}__list`}>
-      {!!data.getsongs &&
-        data.getsongs.map(
+      {!!data.getSongs &&
+        data.getSongs.map(
           (song, i) =>
             !!song && (
               <li key={i} className={`${className}__item`}>

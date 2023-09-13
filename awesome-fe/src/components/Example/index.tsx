@@ -8,7 +8,7 @@ const ExampleContainer = () => {
     <h3> Get All Song With no filter </h3>
     <CodeBlock
       text={`query getSongs {
-      getsongs {
+      getSongs {
         Song
         Year
         Album
@@ -21,7 +21,7 @@ const ExampleContainer = () => {
     <CodeBlock
       text={`
       query getSongsWithFilter($where: SongWhereInput!) {
-        getsongs(where: $where) {
+        getSongs(where: $where) {
           Song
           Year
           Album
@@ -34,7 +34,7 @@ const ExampleContainer = () => {
     <CodeBlock
       text={`
       query getPopularSongs($orderBy: SongOrderByInput! $skip: Int $take: Int) {
-        getsongs(orderBy: $orderBy,skip: $skip,take:$take) {
+        getSongs(orderBy: $orderBy,skip: $skip,take:$take) {
           Song
           Year
           Album

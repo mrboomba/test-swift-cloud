@@ -21,7 +21,7 @@ export type Scalars = {
 
 export type Query = {
   __typename?: 'Query';
-  getsongs?: Maybe<Array<Maybe<Song>>>;
+  getSongs?: Maybe<Array<Maybe<Song>>>;
 };
 
 
@@ -67,7 +67,7 @@ export type GetSongsWithFilterQueryVariables = Exact<{
 }>;
 
 
-export type GetSongsWithFilterQuery = { __typename?: 'Query', getsongs?: Array<{ __typename?: 'Song', Song?: string | null, Year?: number | null, Album?: string | null } | null> | null };
+export type GetSongsWithFilterQuery = { __typename?: 'Query', getSongs?: Array<{ __typename?: 'Song', Song?: string | null, Year?: number | null, Album?: string | null } | null> | null };
 
 export type GetPopularSongsQueryVariables = Exact<{
   orderBy: SongOrderByInput;
@@ -76,15 +76,15 @@ export type GetPopularSongsQueryVariables = Exact<{
 }>;
 
 
-export type GetPopularSongsQuery = { __typename?: 'Query', getsongs?: Array<{ __typename?: 'Song', Song?: string | null, Year?: number | null, Album?: string | null, PlaysJune?: number | null, PlaysJuly?: number | null, PlaysAugust?: number | null } | null> | null };
+export type GetPopularSongsQuery = { __typename?: 'Query', getSongs?: Array<{ __typename?: 'Song', Song?: string | null, Year?: number | null, Album?: string | null, PlaysJune?: number | null, PlaysJuly?: number | null, PlaysAugust?: number | null } | null> | null };
 
 export type GetSongsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetSongsQuery = { __typename?: 'Query', getsongs?: Array<{ __typename?: 'Song', Song?: string | null, Year?: number | null, Album?: string | null } | null> | null };
+export type GetSongsQuery = { __typename?: 'Query', getSongs?: Array<{ __typename?: 'Song', Song?: string | null, Year?: number | null, Album?: string | null } | null> | null };
 
 
-export const GetSongsWithFilterDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"getSongsWithFilter"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"where"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"SongWhereInput"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"getsongs"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"Variable","name":{"kind":"Name","value":"where"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"Song"}},{"kind":"Field","name":{"kind":"Name","value":"Year"}},{"kind":"Field","name":{"kind":"Name","value":"Album"}}]}}]}}]} as unknown as DocumentNode<GetSongsWithFilterQuery, GetSongsWithFilterQueryVariables>;
+export const GetSongsWithFilterDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"getSongsWithFilter"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"where"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"SongWhereInput"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"getSongs"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"Variable","name":{"kind":"Name","value":"where"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"Song"}},{"kind":"Field","name":{"kind":"Name","value":"Year"}},{"kind":"Field","name":{"kind":"Name","value":"Album"}}]}}]}}]} as unknown as DocumentNode<GetSongsWithFilterQuery, GetSongsWithFilterQueryVariables>;
 
 
 /**
@@ -116,7 +116,7 @@ export type GetSongsWithFilterLazyQueryHookResult = ReturnType<typeof useGetSong
 export type GetSongsWithFilterQueryResult = Apollo.QueryResult<GetSongsWithFilterQuery, GetSongsWithFilterQueryVariables>;
 export const GetPopularSongsDocument = gql`
     query getPopularSongs($orderBy: SongOrderByInput!, $skip: Int, $take: Int) {
-  getsongs(orderBy: $orderBy, skip: $skip, take: $take) {
+  getSongs(orderBy: $orderBy, skip: $skip, take: $take) {
     Song
     Year
     Album
@@ -158,7 +158,7 @@ export type GetPopularSongsLazyQueryHookResult = ReturnType<typeof useGetPopular
 export type GetPopularSongsQueryResult = Apollo.QueryResult<GetPopularSongsQuery, GetPopularSongsQueryVariables>;
 export const GetSongsDocument = gql`
     query getSongs {
-  getsongs {
+  getSongs {
     Song
     Year
     Album

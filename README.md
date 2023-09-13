@@ -40,7 +40,7 @@ Before you begin, ensure that you have the following prerequisite installed:
 
 ## API Documentation
 
-### `getsongs` Query
+### `getSongs` Query
 
 #### Description
 
@@ -60,7 +60,7 @@ Retrieves a list of songs based on specified filtering and sorting criteria.
 
 ```graphql
 query {
-  getsongs(
+  getSongs(
     orderBy: { Year: ASC, PlaysJune: DESC }
     skip: 0
     take: 10

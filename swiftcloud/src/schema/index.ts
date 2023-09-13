@@ -50,7 +50,7 @@ export const schema = new GraphQLSchema({
     query: new GraphQLObjectType({
         name: 'Query',
         fields: {
-            getsongs: {
+            getSongs: {
                 type: new GraphQLList(Song),
                 args: {
                     orderBy:{type: SongOrderByInput},

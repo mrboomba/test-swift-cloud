@@ -18,7 +18,7 @@ app.use(express.json());
 app.all(
   "/graphql",
   createHandler({
-    schema: schema,
+    schema
   })
 );
 

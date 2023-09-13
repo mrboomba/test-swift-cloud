@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 
 export const QUERY_LAUNCH_LIST = gql`
   query getSongs {
-    getsongs {
+    getSongs {
       Song
       Year
       Album
